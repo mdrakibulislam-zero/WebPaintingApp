@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #e0e5ec;
+  font-family: Oswald, sans-serif;
+  overflow: hidden;
+}
+
+.top-bar {
+  padding-left: 15px;
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  background-color: #e0e5ec;
+  display: flex;
+  justify-content: center;
+}
+
+.fas,
+.far {
+  font-size: 25px;
+  position: relative;
+  top: 5px;
+  background-color: #9dabc0;
+  color: rgba(34, 48, 74);
+  padding: 5px;
+  border-radius: 5px;
+  width: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.fas:hover,
+.far:hover {
+  filter: brightness(90%);
+}
+
+.fa-fill-drip {
+  cursor: default;
+}
+
+.fa-undo-alt:hover,
+.fa-trash-alt:hover {
+  color: #f2f3f5;
+}
+
+.active-tool {
+  position: absolute;
+  top: 9px;
+  left: 5px;
+}
+
+.active-tool > span {
+  background-color: #9dabc0;
+  border-radius: 5px;
+  padding: 2.5px 16px;
+  color: rgba(34, 48, 74);
+  font-size: 20px;
+  user-select: none;
+}
+
+.tool {
+  position: relative;
+  top: 3px;
+}
+
+.tool:not(:first-child) {
+  margin-left: 8px;
+}
+
+.brush {
+  height: 44px;
+  width: 345px;
+}
+
+.brush > * {
+  margin-left: 10px;
+}
+
+.size {
+  min-width: 40px;
+  height: 35px;
+  position: relative;
+  top: 4px;
+  left: -5px;
+  background-color: #9dabc0;
+  border-radius: 5px;
+  padding: 2.5px 8px;
+  color: rgba(34, 48, 74);
+  font-size: 20px;
+  user-select: none;
+}
+
+.slider {
+  -webkit-appearance: none;
+  position: relative;
+  left: -8px;
+  width: 100px;
+  height: 10px;
+  background: #9dabc0;
+  outline: none;
+  opacity: 0.7;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  background: rgba(34, 48, 74);
+}
+
+.slider::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  background: rgba(34, 48, 74);
+}
+
+.jscolor {
+  border-style: solid;
+  border-radius: 5px;
+  height: 35px;
+  width: 120px;
+  margin-left: 3px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+}
+
+canvas#canvas {
+  position: absolute;
+  top: 50px;
+  cursor: crosshair;
+  z-index: 10;
+}
+
+.mobile-message {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .mobile-message {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: #e0e5ec;
+    color: rgba(34, 48, 74);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 100;
+  }
+}
